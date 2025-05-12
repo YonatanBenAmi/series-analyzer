@@ -39,6 +39,7 @@
                         PrintSeries();
                         break;
                     case 'C':
+                        PrintReversSeries();
                         break;
                     case 'D':
                         break;
@@ -103,6 +104,13 @@
             }
 
             //print the series in reversed like entered.
+            void PrintReversSeries()
+            {
+                for (int i = series.Length - 1; i >= 0; i--)
+                {
+                    System.Console.Write($"{series[i]} ");
+                }
+            }
 
             //ptint the sort list (low to higt).
 
