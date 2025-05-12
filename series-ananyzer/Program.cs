@@ -42,6 +42,7 @@
                         PrintReversSeries();
                         break;
                     case 'D':
+                        SortSeries();
                         break;
                     case 'E':
                         break;
@@ -113,6 +114,15 @@
             }
 
             //ptint the sort list (low to higt).
+            void SortSeries()
+            {
+                List<string> copySeries = new List<string>([..series]);
+                copySeries.Sort();
+                foreach (string item in copySeries)
+                {
+                    System.Console.Write($"{item} ");
+                }
+            }
 
             //print the max value.
 
