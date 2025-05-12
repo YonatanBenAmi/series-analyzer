@@ -4,29 +4,39 @@
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("Enter series: ");
             string[] series;
-            series = Console.ReadLine()!.Split(" ");
-            Menu();
+            series = Console.ReadLine()!.Split();
+            while (true)
+            {
+                System.Console.WriteLine();
+                Menu();
+            }
+
             void Menu()
             {
                 printMenu();//print menu.
-                string userInput = Console.ReadLine()!;//The choice user.  -- need validation
-                char userChoice = char.Parse(userInput);
-                ActiveFunc(userChoice);
-              
-
-
+                string userInput = UserChoice();
+                ActiveFunc(StringToChar(userInput));
             }
 
-   //Activating the appropriate function.
+            //Accepting the user's choice.
+            string UserChoice()
+            {
+                string userInput = Console.ReadLine()!;//The choice user.  -- need validation
+                return userInput;
+            }
+
+            //Activating the appropriate function.
             void ActiveFunc(char userChoice)
             {
                   switch(userChoice)
                 {
                     case 'A':
-                        ReplaceSeries();
+                        series = ReplaceSeries();
                         break;
                     case 'B':
+                        PrintSeries();
                         break;
                     case 'C':
                         break;
@@ -49,6 +59,13 @@
                         break;
                 }
             }
+
+            //convert string to char.
+            char StringToChar(string str)
+            {
+                //need validtion
+                return char.Parse(str);
+            } 
 
             //   ↓-menu functions-↓
 
@@ -77,6 +94,13 @@
             }
 
             //print the series like entered.
+            void PrintSeries()
+            {
+                foreach(string item in series)
+                {
+                    Console.Write($"{item} ");
+                }
+            }
 
             //print the series in reversed like entered.
 
@@ -94,7 +118,9 @@
 
             //exit from program.
 
-            //VALIDATE
+            //↓-VALIDATE-↓
+
+            //
 
 
         }
