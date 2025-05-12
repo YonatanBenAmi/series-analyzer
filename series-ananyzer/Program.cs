@@ -10,9 +10,47 @@
             void Menu()
             {
                 printMenu();//print menu.
+                string userInput = Console.ReadLine()!;//The choice user.  -- need validation
+                char userChoice = char.Parse(userInput);
+                ActiveFunc(userChoice);
+              
+
+
             }
 
-            //FUNCTION
+   //Activating the appropriate function.
+            void ActiveFunc(char userChoice)
+            {
+                  switch(userChoice)
+                {
+                    case 'A':
+                        ReplaceSeries();
+                        break;
+                    case 'B':
+                        break;
+                    case 'C':
+                        break;
+                    case 'D':
+                        break;
+                    case 'E':
+                        break;
+                    case 'F':
+                        break;
+                    case 'G':
+                        break;
+                    case 'H':
+                        break;
+                    case 'I':
+                        break;
+                    case 'J':
+                        break;
+                    default:
+                        System.Console.WriteLine("Worng");
+                        break;
+                }
+            }
+
+            //   ↓-menu functions-↓
 
             //print menu.
             void printMenu()
@@ -33,7 +71,7 @@
             //replace list.
             string[] ReplaceSeries()
             {
-                string[] newSeries = Console.ReadLine()!.Split(" ");
+                string[] newSeries = Console.ReadLine()!.Split(" ");//-- need validation
 
                 return newSeries;
             }
