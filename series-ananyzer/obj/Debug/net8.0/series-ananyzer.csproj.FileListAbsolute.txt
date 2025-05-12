@@ -1,0 +1,15 @@
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\bin\Debug\net8.0\series-ananyzer.exe
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\bin\Debug\net8.0\series-ananyzer.deps.json
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\bin\Debug\net8.0\series-ananyzer.runtimeconfig.json
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\bin\Debug\net8.0\series-ananyzer.dll
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\bin\Debug\net8.0\series-ananyzer.pdb
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.AssemblyInfoInputs.cache
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.AssemblyInfo.cs
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.csproj.CoreCompileInputs.cache
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.sourcelink.json
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.dll
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\refint\series-ananyzer.dll
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.pdb
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\series-ananyzer.genruntimeconfig.cache
+C:\Users\yba60\Desktop\C#\series-ananyzer\series-ananyzer\obj\Debug\net8.0\ref\series-ananyzer.dll
