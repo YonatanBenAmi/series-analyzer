@@ -39,25 +39,25 @@ namespace Example
                         series = ReplaceSeries();
                         break;
                     case 'B':
-                        PrintSeries();
+                        Console.WriteLine(string.Join(", ", GetSeries(series)));
                         break;
                     case 'C':
-                        PrintReversSeries();
+                        Console.WriteLine(string.Join(", ", GetReversSeries(series)));
                         break;
                     case 'D':
-                        SortSeries();
+                        Console.WriteLine(string.Join(", ", SortSeries(series)));
                         break;
                     case 'E':
-                        GetMaxValue(series);
+                        System.Console.WriteLine(GetMaxValue(series));
                         break;
                     case 'F':
-                        GetMinValue(series);
+                        System.Console.WriteLine(GetMinValue(series)); 
                         break;
                     case 'G':
-                        GetAverage(series);
+                        System.Console.WriteLine(GetAverage(series)); 
                         break;
                     case 'H':
-                        GetLegnth(series);
+                        System.Console.WriteLine( GetLegnth(series));
                         break;
                     case 'I':
                         System.Console.WriteLine(GetSumSeries(series));
@@ -66,7 +66,7 @@ namespace Example
                         runFlag = false;
                         break;
                     default:
-                        System.Console.WriteLine("Worng");
+                        System.Console.WriteLine("Wrong choice! Try again.");
                         break;
                 }
             }
@@ -104,36 +104,33 @@ namespace Example
                 return newSeries;
             }
 
-            //print the series like entered.
-            void PrintSeries()
+            //return the series like entered.
+            List<string> GetSeries(string[] series)
             {
-                foreach(string item in series)
-                {
-                    Console.Write($"{item} ");
-                }
+                return series.ToList();
             }
 
-            //print the series in reversed like entered.
-            void PrintReversSeries()
+            //return the series in reversed like entered.
+            List<string> GetReversSeries(string[] series)
             {
+                List<string> reverseSeries = new List<string>();
+
                 for (int i = series.Length - 1; i >= 0; i--)
                 {
-                    System.Console.Write($"{series[i]} ");
+                    reverseSeries.Add(series[i]);
                 }
+                return reverseSeries;
             }
 
-            //ptint the sort list (low to higt).
-            void SortSeries()
+            //return the sort list (low to higt).
+            List<string> SortSeries(string[] series)
             {
                 List<string> copySeries = new List<string>([..series]);
                 copySeries.Sort();
-                foreach (string item in copySeries)
-                {
-                    System.Console.Write($"{item} ");
-                }
+                return copySeries;
             }
 
-            //print the max value.
+            //return the max value.
             double GetMaxValue(string[] series)
             {
                 int maxNum = 0;
@@ -151,27 +148,27 @@ namespace Example
                 return maxNum;
             }
 
-            //print the min value.
+            //return the min value.
             double GetMinValue(string[] series)
             {
-                int minNum = int.Parse(series[0]);
+                double minNum = double.Parse(series[0]);
                 for (int i = 0; i < series.Length; i++)
                 {
-                    if (int.Parse(series[i]) < minNum)
+                    if (double.Parse(series[i]) < minNum)
                     {
-                        minNum = int.Parse(series[i]);
+                        minNum = double.Parse(series[i]);
                     }
                 }
                 return minNum;
             }
 
-            //print average.
+            //return average series.
             double GetAverage(string[] series)
             {
                 return GetSumSeries(series) / GetLegnth(series);
             }
 
-            //print length
+            //return length series.
             int GetLegnth(string[] series)
             {
                 int count = 0;
@@ -182,7 +179,7 @@ namespace Example
                 return count;
             }
 
-            //print sum.
+            //return sum series.
             double GetSumSeries(string [] series)
             {
                 double sumSeries = 0;
@@ -192,9 +189,6 @@ namespace Example
                 }
                 return sumSeries;
             }
-            
-
-            //exit from program.
 
             //↓-VALIDATE-↓
 
