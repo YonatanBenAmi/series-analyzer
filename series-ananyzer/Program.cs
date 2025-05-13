@@ -59,7 +59,7 @@ namespace Example
                         GetLegnth(series);
                         break;
                     case 'I':
-                        // System.Console.WriteLine(GetSumSeries(series));
+                        System.Console.WriteLine(GetSumSeries(series));
                         break;
                     case 'J':
                         break;
@@ -181,16 +181,16 @@ namespace Example
             }
 
             //print sum.
-            // double GetSumSeries(string [] series)
-            // {
-            //     double sumSeries = 0;
-            //     foreach (var item in series)
-            //     {
-            //         sumSeries += double.Parse(item);
-            //     }
-            //     System.Console.WriteLine(sumSeries);
-            //     return sumSeries;
-            // }
+            double GetSumSeries(string [] series)
+            {
+                double sumSeries = 0;
+                foreach (var item in series)
+                {
+                    sumSeries += double.Parse(item);
+                }
+                System.Console.WriteLine(sumSeries);
+                return sumSeries;
+            }
             
 
             //exit from program.
