@@ -56,7 +56,7 @@ namespace Example
                         // GetAverage(series);
                         break;
                     case 'H':
-                        // GetLegnth(series);
+                        GetLegnth(series);
                         break;
                     case 'I':
                         // System.Console.WriteLine(GetSumSeries(series));
@@ -170,15 +170,15 @@ namespace Example
             // }
 
             //print length
-            // int GetLegnth(string[] series)
-            // {
-            //     int count = 0;
-            //     foreach (var item in series)
-            //     {
-            //         count++;
-            //     }
-            //     return count;
-            // }
+            int GetLegnth(string[] series)
+            {
+                int count = 0;
+                foreach (var item in series)
+                {
+                    count++;
+                }
+                return count;
+            }
 
             //print sum.
             // double GetSumSeries(string [] series)
