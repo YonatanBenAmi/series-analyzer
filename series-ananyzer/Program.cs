@@ -9,7 +9,8 @@ namespace Example
             System.Console.WriteLine("Enter series: ");
             string[] series;
             series = Console.ReadLine()!.Split();
-            while (true)
+            bool runFlag = true;
+            while (runFlag)
             {
                 System.Console.WriteLine();
                 Menu();
@@ -62,6 +63,7 @@ namespace Example
                         System.Console.WriteLine(GetSumSeries(series));
                         break;
                     case 'J':
+                        runFlag = false;
                         break;
                     default:
                         System.Console.WriteLine("Worng");
@@ -188,7 +190,6 @@ namespace Example
                 {
                     sumSeries += double.Parse(item);
                 }
-                System.Console.WriteLine(sumSeries);
                 return sumSeries;
             }
             
