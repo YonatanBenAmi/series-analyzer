@@ -1,4 +1,6 @@
-﻿namespace Example
+﻿using System.Runtime.ConstrainedExecution;
+
+namespace Example
 {
     class Program()
     {
@@ -45,15 +47,19 @@
                         SortSeries();
                         break;
                     case 'E':
-                    MaxValue(series);
+                        GetMaxValue(series);
                         break;
                     case 'F':
+                        GetMinValue(series);
                         break;
                     case 'G':
+                        // GetAverage(series);
                         break;
                     case 'H':
+                        // GetLegnth(series);
                         break;
                     case 'I':
+                        // System.Console.WriteLine(GetSumSeries(series));
                         break;
                     case 'J':
                         break;
@@ -126,7 +132,7 @@
             }
 
             //print the max value.
-            void MaxValue(string[] series)
+            double GetMaxValue(string[] series)
             {
                 int maxNum = 0;
                 for (int i = 0; i < series.Length; i++)
@@ -140,16 +146,52 @@
                         maxNum = int.Parse(series[i]);
                     }
                 }
-                System.Console.WriteLine(maxNum);
+                return maxNum;
             }
 
             //print the min value.
+            double GetMinValue(string[] series)
+            {
+                int minNum = int.Parse(series[0]);
+                for (int i = 0; i < series.Length; i++)
+                {
+                    if (int.Parse(series[i]) < minNum)
+                    {
+                        minNum = int.Parse(series[i]);
+                    }
+                }
+                return minNum;
+            }
 
             //print average.
+            // double GetAverage(string[] series)
+            // {
+            //     return GetSumSeries(series) / GetLegnth(series);
+            // }
 
             //print length
+            // int GetLegnth(string[] series)
+            // {
+            //     int count = 0;
+            //     foreach (var item in series)
+            //     {
+            //         count++;
+            //     }
+            //     return count;
+            // }
 
             //print sum.
+            // double GetSumSeries(string [] series)
+            // {
+            //     double sumSeries = 0;
+            //     foreach (var item in series)
+            //     {
+            //         sumSeries += double.Parse(item);
+            //     }
+            //     System.Console.WriteLine(sumSeries);
+            //     return sumSeries;
+            // }
+            
 
             //exit from program.
 
