@@ -6,9 +6,16 @@ namespace Example
     {
         static void Main(string[] args)
         {
+
             System.Console.WriteLine("Enter series: ");
             string[] series;
             series = Console.ReadLine()!.Split();
+            List<string> strings = CleanSpaces(series);
+            foreach(string str in strings)
+            {
+                Console.WriteLine(str);
+            }
+
             bool runFlag = true;
             while (runFlag)
             {
@@ -114,7 +121,6 @@ namespace Example
             List<string> GetReversSeries(string[] series)
             {
                 List<string> reverseSeries = new List<string>();
-
                 for (int i = series.Length - 1; i >= 0; i--)
                 {
                     reverseSeries.Add(series[i]);
@@ -190,7 +196,28 @@ namespace Example
                 return sumSeries;
             }
 
+            //↓-String cleaning-↓
+
+            //Cleaning up unnecessary spaces
+            List<string> CleanSpaces(string[] series)
+            {
+                List<string> listSeries =  series.ToList();
+                for (int i = 0; i < listSeries.Count; i++)
+                {
+                    if (listSeries[i] == "")
+                    {
+                        System.Console.WriteLine(i);
+                        listSeries.RemoveAt(i);
+                    }
+                }
+                return listSeries;
+            }
+
+
+
             //↓-VALIDATE-↓
+
+            //There are at least 3 values ​​in the array.
 
             //
 
