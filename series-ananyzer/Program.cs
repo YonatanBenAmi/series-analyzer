@@ -11,7 +11,7 @@ namespace Example
             string[] series;
             series = Console.ReadLine()!.Split();
             List<string> seriesList = CleanSpaces(series);
-            
+            System.Console.WriteLine(IsDigitValue(seriesList));
 
             bool runFlag = true;
             while (runFlag)
@@ -227,7 +227,11 @@ namespace Example
                 {
                     foreach (char character in item) 
                     {
-                        if (!char.IsDigit(character))
+                        if (item[0] == '.' || item[item.Count()- 1] == '.' || item.Where(c => c == '.').Count() > 1 )
+                        {
+                            return false;
+                        }
+                        if (!char.IsDigit(character) && character != '.')
                         {
                             return false;
                         }
@@ -237,10 +241,13 @@ namespace Example
             }
 
             //Checks that all values ​​are positive numbers
-            bool IsPositiveNums(List<string> cleanSeries)
-            {
-
-            }
+            // bool IsPositiveNums(List<string> cleanSeries)
+            // {
+            //     foreach (var item in cleanSeries)
+            //     {
+                    
+            //     }
+            // }
 
 
         }
