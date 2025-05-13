@@ -53,7 +53,7 @@ namespace Example
                         GetMinValue(series);
                         break;
                     case 'G':
-                        // GetAverage(series);
+                        GetAverage(series);
                         break;
                     case 'H':
                         GetLegnth(series);
@@ -164,10 +164,10 @@ namespace Example
             }
 
             //print average.
-            // double GetAverage(string[] series)
-            // {
-            //     return GetSumSeries(series) / GetLegnth(series);
-            // }
+            double GetAverage(string[] series)
+            {
+                return GetSumSeries(series) / GetLegnth(series);
+            }
 
             //print length
             int GetLegnth(string[] series)
