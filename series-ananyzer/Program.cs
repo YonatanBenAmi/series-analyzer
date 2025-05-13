@@ -7,11 +7,15 @@ namespace Example
         static void Main(string[] args)
         {
 
-            System.Console.WriteLine("Enter series: ");
             string[] series;
-            series = Console.ReadLine()!.Split();
-            List<string> seriesList = CleanSpaces(series);
-            System.Console.WriteLine(IsDigitValue(seriesList));
+            List<string> seriesList;
+            do
+            {
+                System.Console.WriteLine("Enter at least 3 values and separate with a space: ");
+                series = Console.ReadLine()!.Split();
+                seriesList = CleanSpaces(series);
+            } while (!IsValid(seriesList));
+           
 
             bool runFlag = true;
             while (runFlag)
@@ -40,7 +44,7 @@ namespace Example
                   switch(userChoice)
                 {
                     case 'A':
-                        series = ReplaceSeries();
+                        seriesList = ReplaceSeries();
                         break;
                     case 'B':
                         Console.WriteLine(string.Join(", ", GetSeries(series)));
@@ -101,11 +105,17 @@ namespace Example
             }
 
             //replace list.
-            string[] ReplaceSeries()
+            List<string> ReplaceSeries()
             {
-                string[] newSeries = Console.ReadLine()!.Split(" ");//-- need validation
-
-                return newSeries;
+                List<string> cleanSeries;
+                do
+                {
+                    System.Console.WriteLine("Enter series: ");
+                    string[] newSeries = Console.ReadLine()!.Split(" ");
+                    cleanSeries = CleanSpaces(newSeries);
+                }
+                while(!IsValid(cleanSeries));
+                return cleanSeries;
             }
 
             //return the series like entered.
@@ -210,9 +220,12 @@ namespace Example
                 return listSeries;
             }
 
-
-
             //↓-VALIDATE-↓
+
+            bool IsValid(List<string> cleanSeries)
+            {
+                return IsValidLength(cleanSeries) && IsDigitValue(cleanSeries) && !IsEmpty(cleanSeries);
+            }
 
             //There are at least 3 values ​​in the array.
             bool IsValidLength(List<string> cleanSeries)
@@ -227,7 +240,7 @@ namespace Example
                 {
                     foreach (char character in item) 
                     {
-                        if (item[0] == '.' || item[item.Count()- 1] == '.' || item.Where(c => c == '.').Count() > 1 )
+                        if (item[item.Count()- 1] == '.' || item.Where(c => c == '.').Count() > 1 )
                         {
                             return false;
                         }
@@ -240,14 +253,11 @@ namespace Example
                 return true;
             }
 
-            //Checks that all values ​​are positive numbers
-            // bool IsPositiveNums(List<string> cleanSeries)
-            // {
-            //     foreach (var item in cleanSeries)
-            //     {
-                    
-            //     }
-            // }
+            // is empty
+            bool IsEmpty(List<string> cleanString)
+            {
+                return cleanString.Count == 0; 
+            }
 
 
         }
