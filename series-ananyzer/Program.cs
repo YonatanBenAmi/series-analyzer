@@ -45,6 +45,7 @@
                         SortSeries();
                         break;
                     case 'E':
+                    MaxValue(series);
                         break;
                     case 'F':
                         break;
@@ -125,6 +126,22 @@
             }
 
             //print the max value.
+            void MaxValue(string[] series)
+            {
+                int maxNum = 0;
+                for (int i = 0; i < series.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        maxNum = int.Parse(series[i]);
+                    }
+                    else if (int.Parse(series[i]) > maxNum)
+                    {
+                        maxNum = int.Parse(series[i]);
+                    }
+                }
+                System.Console.WriteLine(maxNum);
+            }
 
             //print the min value.
 
