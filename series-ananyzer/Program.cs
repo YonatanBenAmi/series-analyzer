@@ -10,21 +10,18 @@ namespace Example
             System.Console.WriteLine("Enter series: ");
             string[] series;
             series = Console.ReadLine()!.Split();
-            List<string> strings = CleanSpaces(series);
-            foreach(string str in strings)
-            {
-                Console.WriteLine(str);
-            }
+            List<string> seriesList = CleanSpaces(series);
+            
 
             bool runFlag = true;
             while (runFlag)
             {
-                System.Console.WriteLine();
                 Menu();
             }
 
             void Menu()
             {
+                System.Console.WriteLine();
                 printMenu();//print menu.
                 string userInput = UserChoice();
                 ActiveFunc(StringToChar(userInput));
@@ -218,8 +215,32 @@ namespace Example
             //↓-VALIDATE-↓
 
             //There are at least 3 values ​​in the array.
+            bool IsValidLength(List<string> cleanSeries)
+            {
+                return cleanSeries.Count >= 3;
+            }
 
-            //
+            //Checks that all values ​​are numeric
+            bool IsDigitValue(List<string> cleanSeries)
+            {
+                foreach (var item in cleanSeries)
+                {
+                    foreach (char character in item) 
+                    {
+                        if (!char.IsDigit(character))
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            //Checks that all values ​​are positive numbers
+            bool IsPositiveNums(List<string> cleanSeries)
+            {
+
+            }
 
 
         }
